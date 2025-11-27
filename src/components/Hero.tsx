@@ -23,7 +23,7 @@ export function Hero() {
             <div className="relative inline-block">
               <div className="w-38.5 h-38.5 md:w-48 md:h-48.56 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-xl mx-auto">
                 <ImageWithFallback
-                  src="src/components/image.png"                  alt="Sofyan Khalifa - Full Stack Developer"
+                  src="public/assets/profile.png"                  alt="Sofyan Khalifa - Full Stack Developer"
                   className="w-full h-full object-cover"
                 />
               </div>

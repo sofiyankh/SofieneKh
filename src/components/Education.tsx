@@ -8,16 +8,6 @@ import { SharedBlurCard } from './SharedBlurCard';
 export function Education() {
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      school: "Stanford University",
-      location: "Stanford, CA",
-      period: "2016 - 2018",
-      gpa: "3.8/4.0",
-      description: "Specialized in Software Engineering and Machine Learning. Completed thesis on distributed systems optimization.",
-      coursework: ["Advanced Algorithms", "Machine Learning", "Distributed Systems", "Software Engineering"],
-      achievements: ["Dean's List", "Graduate Research Assistant", "Published 2 research papers"]
-    },
-    {
       degree: "Bachelor of Science in Computer Science",
       school: "University of California, Berkeley",
       location: "Berkeley, CA",
@@ -175,7 +165,6 @@ export function Education() {
               ))}
             </div>
 
-            {/* Additional Learning */}
             <SharedBlurCard className="mt-6 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
               <CardContent className="p-6 text-center">
                 <h4 className="font-bold text-foreground mb-2">Continuous Learning</h4>

@@ -26,29 +26,34 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
+  const phoneNumber = "+21658826329";
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "sofyan.khalifa@email.com",
-      link: "mailto:sofyan.khalifa@email.com"
+      value: "sofiyankhalifa.11@gmail.com",
+      link: "mailto:sofiyankhalifa.11@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: phoneNumber,
+      link: `tel:${phoneNumber}`
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: "WhatsApp",
+      value: phoneNumber,
+      link: `https://wa.me/${phoneNumber.replace(/\D/g,'')}`
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Tunisia, Monastir",
       link: "#"
     }
   ];
@@ -104,6 +109,8 @@ export function Contact() {
                       <a
                         href={info.link}
                         className="text-muted-foreground hover:text-primary transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {info.value}
                       </a>
@@ -227,7 +234,6 @@ export function Contact() {
                   </Button>
                 </form>
 
-                {/* Additional Info */}
                 <div className="mt-8 p-4 bg-muted/20 rounded-lg">
                   <p className="text-sm text-muted-foreground text-center">
                     💡 <strong>Tip:</strong> Include details about your project timeline, budget range, 

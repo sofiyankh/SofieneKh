@@ -7,11 +7,12 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Replace these with your actual profiles if you want them live
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, href: "#", label: "GitHub" },
+    { icon: <Github className="w-5 h-5" />, href: "https://github.com/sofiyankh", label: "GitHub" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
     { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
-    { icon: <Mail className="w-5 h-5" />, href: "mailto:sofyan.khalifa@email.com", label: "Email" }
+    { icon: <Mail className="w-5 h-5" />, href: "mailto:sofiyankhalifa.11@gmail.com", label: "Email" }
   ];
 
   const quickLinks = [
@@ -29,6 +30,12 @@ export function Footer() {
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // contact details you provided
+  const email = 'sofiyankhalifa.11@gmail.com';
+  const phoneDisplay = '+216 58826329';
+  const phoneTel = '+21658826329'; // for tel: and wa.me links
+  const locationText = 'Tunisia, Monastir';
+
   return (
     <footer className="relative progressive-blur-medium border-t border-border/50 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,9 +45,10 @@ export function Footer() {
           <div className="md:col-span-2 space-y-6">
             <h3 className="text-2xl font-bold text-primary">Sofyan Khalifa</h3>
             <p className="text-muted-foreground max-w-md">
-              Full-stack developer passionate about creating innovative solutions 
-              that make a difference. Always learning, always building.
+              Full-stack web & backend developer — focused on secure, production-ready applications.
+              I design, build and deploy end-to-end projects with strong attention to security and scalability.
             </p>
+
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
                 <Button
@@ -80,17 +88,31 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Get In Touch</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p className="flex items-center gap-2">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" className="w-4 h-4" alt="Email" />
-                sofyan.khalifa@email.com
+                <Mail className="w-4 h-4" />
+                <a href={`mailto:${email}`} className="hover:text-primary" target="_blank" rel="noopener noreferrer">
+                  {email}
+                </a>
               </p>
+
               <p className="flex items-center gap-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" className="w-4 h-4" alt="Phone" />
-                +1 (555) 123-4567
+                <a href={`tel:${phoneTel}`} className="hover:text-primary">
+                  {phoneDisplay}
+                </a>
               </p>
+
+              <p className="flex items-center gap-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" className="w-4 h-4" alt="WhatsApp" />
+                <a href={`https://wa.me/${phoneTel}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                  WhatsApp: {phoneDisplay}
+                </a>
+              </p>
+
               <p className="flex items-center gap-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" className="w-4 h-4" alt="Location" />
-                San Francisco, CA
+                {locationText}
               </p>
+
               <p className="flex items-center gap-2 text-green-500 font-medium">
                 <img src="https://cdn-icons-png.flaticon.com/512/447/447147.png" className="w-4 h-4" alt="Available" />
                 Available for projects
@@ -101,16 +123,16 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-border py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex items-center text-sm text-muted-foreground space-x-1">
-            <span>© 2024 Sofyan Khalifa. Made with</span>
-            <Heart className="w-4 h-4 text-red-500 fill-current" />
+          <div className="flex items-center text-sm text-muted-foreground space-x-2">
+            <span>© 2025 Sofyan Khalifa. Made with</span>
+            <Heart className="w-4 h-4 text-red-500" />
             <span>and React</span>
           </div>
 
           <div className="flex items-center space-x-4">
             <div className="flex items-center text-sm text-muted-foreground space-x-2">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span>Last updated: January 2024</span>
+              <span>Last updated: December 15, 2025</span>
             </div>
 
             <Button

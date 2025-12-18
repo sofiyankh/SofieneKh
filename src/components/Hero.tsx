@@ -5,6 +5,7 @@ import { Download, Mail, Github, Linkedin } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ScrollAnimatedSection } from './ScrollAnimatedSection';
 
+import profile from '../../public/profile.png';
 
 export function Hero() {
   const scrollToContact = () => {
@@ -23,7 +24,8 @@ export function Hero() {
             <div className="relative inline-block">
               <div className="w-38.5 h-38.5 md:w-48 md:h-48.56 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-xl mx-auto">
                 <ImageWithFallback
-                  src="public/profile.png"              alt="Sofyan Khalifa - Full Stack Developer"
+                  src={profile}                                          // ← THIS IS PERFECT
+                  alt="Sofyan Khalifa - Full Stack Developer"
                   className="w-full h-full object-cover"
                 />
               </div>

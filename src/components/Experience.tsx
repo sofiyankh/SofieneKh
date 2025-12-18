@@ -8,60 +8,59 @@ import { SharedBlurCard } from './SharedBlurCard';
 export function Experience() {
   const experiences = [
     {
-      company: "TechCorp Solutions",
-      position: "Senior Full Stack Developer",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      company: "QuetraTech",
+      position: "Backend Developer (Current)",
+      location: "Tunisia / Remote",
+      period: "2024 - Present",
       type: "Full-time",
       description: [
-        "Led development of 3 major web applications serving 100K+ users",
-        "Architected microservices infrastructure reducing load times by 40%",
-        "Mentored junior developers and conducted code reviews",
-        "Implemented CI/CD pipelines improving deployment frequency by 300%"
+        "Designing and implementing backend services and REST/GraphQL APIs to support web applications",
+        "Building scalable data models and integrations with PostgreSQL and MongoDB",
+        "Improving reliability with containerization (Docker) and CI/CD pipelines",
+        "Collaborating with frontend and design teams to deliver performant, production-ready features"
       ],
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker", "PostgreSQL"]
+      technologies: ["Node.js", "Express", "TypeScript", "PostgreSQL", "MongoDB", "Docker", "AWS"]
     },
     {
-      company: "StartupXYZ",
-      position: "Full Stack Developer",
-      location: "Austin, TX",
-      period: "2020 - 2022",
-      type: "Full-time",
+      company: "Elyos Digital (Monastir)",
+      position: "Backend Developer",
+      location: "Monastir, Tunisia",
+      period: "2021 - 2023",
+      type: "Contract / Junior",
       description: [
-        "Built and maintained customer-facing web applications",
-        "Collaborated with design team to implement responsive UI components",
-        "Optimized database queries resulting in 50% performance improvement",
-        "Participated in agile development process with bi-weekly sprints"
+        "Developed server-side APIs and services for agency web projects and client platforms",
+        "Integrated third-party services and payment gateways; worked on API security and rate-limiting",
+        "Optimized database queries and data access patterns to improve response times",
+        "Participated in design reviews, sprint planning and handoffs with frontend teams"
       ],
-      technologies: ["Vue.js", "Express.js", "MongoDB", "GraphQL", "Jest"]
+      technologies: ["Node.js", "Express", "MySQL / PostgreSQL", "REST APIs", "CI/CD", "Linux"]
     },
     {
-      company: "Digital Agency Pro",
-      position: "Frontend Developer",
+      company: "RB IT Solutions (Téboulba)",
+      position: "Frontend Developer (Next.js) — Stage / Junior",
+      location: "Téboulba, Tunisia",
+      period: "2020 - 2021",
+      type: "Internship / Part-time",
+      description: [
+        "Built responsive, component-driven user interfaces using React and Next.js",
+        "Worked on performance tuning, accessibility improvements and cross-browser testing",
+        "Collaborated with mentors to convert designs into reusable UI components",
+        "Contributed to documentation and supported trainees during workshops and bootcamps"
+      ],
+      technologies: ["Next.js", "React", "Tailwind CSS", "HTML5", "CSS3", "Vercel"]
+    },
+    {
+      company: "Personal & Academic Projects",
+      position: "Full Stack Projects / Freelance",
       location: "Remote",
-      period: "2019 - 2020",
-      type: "Contract",
+      period: "2018 - Present",
+      type: "Project-based",
       description: [
-        "Developed responsive websites for various clients",
-        "Integrated third-party APIs and payment systems",
-        "Worked closely with clients to gather requirements",
-        "Maintained and updated existing client websites"
+        "Multiple personal and academic web applications (front-end + back-end) demonstrating end-to-end skills",
+        "Open-source contributions and collaborative projects used to practice best practices and testing",
+        "Project-wide responsibilities: requirements, deployment, monitoring, and user feedback loops"
       ],
-      technologies: ["JavaScript", "React", "SASS", "WordPress", "PHP"]
-    },
-    {
-      company: "Code Academy",
-      position: "Junior Developer",
-      location: "New York, NY",
-      period: "2018 - 2019",
-      type: "Full-time",
-      description: [
-        "Assisted in development of educational platform features",
-        "Fixed bugs and implemented small feature enhancements",
-        "Learned best practices for code quality and testing",
-        "Participated in daily standups and team meetings"
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js"]
+      technologies: ["React", "Next.js", "Node.js", "Express", "MongoDB", "PostgreSQL", "Git"]
     }
   ];
 
@@ -70,10 +69,10 @@ export function Experience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Work Experience
+            Work Experience & Stages
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and the impact I've made at various organizations
+            Practical roles, internships and project experience aligned with my full-stack profile
           </p>
         </div>
 

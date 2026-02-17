@@ -2,27 +2,32 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { useTheme } from './ThemeProvider';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#home',       labelKey: 'navbar.home' },
+    { href: '#about',      labelKey: 'navbar.about' },
+    { href: '#skills',     labelKey: 'navbar.skills' },
+    { href: '#experience', labelKey: 'navbar.experience' },
+    { href: '#projects',   labelKey: 'navbar.projects' },
+    { href: '#education',  labelKey: 'navbar.education' },
+    { href: '#contact',    labelKey: 'navbar.contact' },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
+  };
+
+  const switchLang = (lang: 'en' | 'fr') => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('lang', lang);
   };
 
   return (
@@ -31,7 +36,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-primary">Sofyan Khalifa</h1>
+            <h1 className="text-xl font-bold text-primary">Sofiene Ben Khalifa</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -43,20 +48,40 @@ export function Navbar() {
                   onClick={() => scrollToSection(item.href)}
                   className="text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Theme Toggle & Mobile Menu Button */}
+          {/* Right side controls */}
           <div className="flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full"
-            >
+            {/* Language Switcher */}
+            <div className="flex items-center rounded-full border border-border bg-muted/30 p-1">
+              <button
+                onClick={() => switchLang('en')}
+                className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+                  i18n.language === 'en'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                🇬🇧 EN
+              </button>
+              <button
+                onClick={() => switchLang('fr')}
+                className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+                  i18n.language === 'fr'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                🇫🇷 FR
+              </button>
+            </div>
+
+            {/* Theme Toggle */}
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
 
@@ -84,7 +109,7 @@ export function Navbar() {
                   onClick={() => scrollToSection(item.href)}
                   className="text-foreground hover:text-primary block px-3 py-2 rounded-md w-full text-left transition-colors"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </button>
               ))}
             </div>

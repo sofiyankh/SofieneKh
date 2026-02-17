@@ -4,15 +4,15 @@ import { Badge } from './ui/badge';
 import { Download, Mail, Github, Linkedin } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ScrollAnimatedSection } from './ScrollAnimatedSection';
-
+import { useTranslation } from 'react-i18next';
 import profile from '../../public/profile.png';
 
 export function Hero() {
+  const { t } = useTranslation();
+
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -24,8 +24,8 @@ export function Hero() {
             <div className="relative inline-block">
               <div className="w-38.5 h-38.5 md:w-48 md:h-48.56 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-xl mx-auto">
                 <ImageWithFallback
-                  src={profile}                                          // ← THIS IS PERFECT
-                  alt="Sofyan Khalifa - Full Stack Developer"
+                  src={profile}
+                  alt="Sofiene Ben Khalifa - Full Stack Developer"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -38,19 +38,15 @@ export function Hero() {
           {/* Name and Title */}
           <div className="mb-6">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Sofyan Khalifa
+              Sofiene Ben Khalifa
             </h1>
             <div className="flex flex-wrap justify-center gap-2 mb-4">
               <Badge variant="secondary" className="px-4 py-2 text-sm">
-                Full Stack Developer
-              </Badge>
-              <Badge variant="outline" className="px-4 py-2 text-sm">
-                React & Node.js
+                {t('hero.subtitle')}
               </Badge>
             </div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Passionate full-stack developer with expertise in modern web technologies. 
-              I create scalable, user-friendly applications that solve real-world problems.
+              {t('hero.description')}
             </p>
           </div>
 
@@ -62,28 +58,42 @@ export function Hero() {
               className="rounded-full px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Mail className="w-5 h-5 mr-2" />
-              Get In Touch
+              {t('hero.getInTouch')}
             </Button>
+
             <Button
+              asChild
               variant="outline"
               size="lg"
               className="rounded-full px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <Download className="w-5 h-5 mr-2" />
-              Download CV
+              <a
+                href="https://drive.google.com/uc?export=download&id=1kN-qSluQCWE8ctRGxskTXda0zN3jKMc8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                {t('hero.downloadCV')}
+              </a>
             </Button>
           </div>
 
           {/* Social Links */}
           <div className="flex justify-center space-x-4">
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-              <Github className="w-5 h-5" />
+            <Button asChild variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
+              <a href="https://github.com/sofiyankh" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <Github className="w-5 h-5" />
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-              <Linkedin className="w-5 h-5" />
+            <Button asChild variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
+              <a href="https://www.linkedin.com/in/sofyan-khalifa-915533220/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <Linkedin className="w-5 h-5" />
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-              <Mail className="w-5 h-5" />
+            <Button asChild variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
+              <a href="mailto:sofiyankhalifa.11@gmail.com" aria-label="Send Email">
+                <Mail className="w-5 h-5" />
+              </a>
             </Button>
           </div>
         </div>
